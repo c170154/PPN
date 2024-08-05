@@ -39,18 +39,21 @@ inputs.addEventListener("keyup", function (e) {
     return true;
  }
 
- function login(){
+ function login(e){
+	e.preventDefault();
     const input1 = document.getElementById("1");
     const input2 = document.getElementById("2");
     const input3 = document.getElementById("3");
     const inputValue1 = input1.value;
     const inputValue2 = input2.value;
     const inputValue3 = input3.value;
-    if (inputValue1 != 1 || inputValue2 != 2 || inputValue3 != 3){
-        alert("error!");
+    if (inputValue1 == 1 && inputValue2 == 2 && inputValue3 == 3){
+		window.open('pic.html', '_self');
     } else {
-        document.location = 'main.html'
+		alert("error!");
     }
  }
+
+ 
 
 

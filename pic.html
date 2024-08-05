@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museum Display</title>
+    <style>
+
+        body{
+            background-image: url('assets/img/12776.jpg');
+            background-size: 100%;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        img {
+            max-width: 60%;
+            height: 60%;
+            border: 6px solid #000000;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        #slider {
+             width: 600px;
+             height: 400px;
+             overflow: hidden;
+        }
+        .slide {
+            width: 600px;
+            height: 400px;
+            float: left;
+        }
+        .slideshow-container {
+            width: 1000px;
+            height: 10em;
+            position: absolute;
+            top: 35%;
+            left: 51%;        
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+            text-align: center;
+            text-transform:uppercase;
+            justify-content: center;
+            align-items: center;
+            
+            
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          
+          <img src="assets/img/download.jpg" style="width:100%">
+          <div class="text">This piece represents a blend of modern techniques and classical styles, capturing the essence of contemporary artistic expression. It reflects the artist's unique approach to form and color, inviting viewers to explore the deeper meanings within the composition.</div>
+        </div>
+        
+        <div class="mySlides fade">
+          
+          <img src="assets/img/download1.jpg" style="width:100%">
+          <div class="text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</div>
+        </div>
+        
+        
+    </div>
+
+</body>
+<script src="assets/js/scriptpic.js"></script>
+</html>
