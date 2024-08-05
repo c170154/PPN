@@ -51,7 +51,6 @@ inputs.addEventListener("keyup", function (e) {
     } else {
         document.location = 'main.html'
     }
-   
  }
 
 
