@@ -41,13 +41,15 @@ inputs.addEventListener("keyup", function (e) {
 
  function login(e){
 	e.preventDefault();
-    const input1 = document.getElementById("1");
-    const input2 = document.getElementById("2");
-    const input3 = document.getElementById("3");
+    const input1 = document.getElementById("input1");
+    const input2 = document.getElementById("input2");
+    const input3 = document.getElementById("input3");
+	const input4 = document.getElementById("input4");
     const inputValue1 = input1.value;
     const inputValue2 = input2.value;
     const inputValue3 = input3.value;
-    if (inputValue1 == 1 && inputValue2 == 2 && inputValue3 == 3){
+	const inputValue4 = input4.value;
+    if (inputValue1 == 1 && inputValue2 == 2 && inputValue3 == 3 && inputValue4 == 4){
 		window.open('pic.html', '_self');
     } else {
 		alert("error!");

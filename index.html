@@ -1,33 +1,81 @@
 <!DOCTYPE html>
-<html class="staticrypt-html">
-  <head>
-    <meta charset="utf-8" />
-    <title>Login</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- do not cache this page -->
-    <meta http-equiv="cache-control" content="max-age=0" />
-    <meta http-equiv="cache-control" content="no-cache" />
-    <meta http-equiv="expires" content="0" />
-    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
-    <meta http-equiv="pragma" content="no-cache" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-
-  <body>
-    <div class="container">
-        <form >
-            <div id="inputs" class="inputs">
-                <input class="input" id = "1"type="text"
-                    inputmode="numeric" maxlength="1" />
-                <input class="input" id = "2" type="text"
-                    inputmode="numeric" maxlength="1" />
-                <input class="input" id = "3"type="text"
-                    inputmode="numeric" maxlength="1" />
-            </div>
-            <input type="submit" id="submitbtn" onclick="login(event);"/>
-        </form>
-        
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>It's a Secret</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .lock {
+            position: relative;
+            width: 200px;
+            height: 300px;
+            background-image: url('assets/img/lock.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .input {
+            position: absolute;
+            width: 30px;
+            height: 40px;
+            font-size: 24px;
+            text-align: center;
+            border: 2px solid black;
+            outline: none;
+            background: white;
+        }
+        #input1 {
+            top: 190px;
+            left: 22px;
+            height: 50px;
+        }
+        #input2 {
+            top: 190px;
+            left: 63px;
+            height: 50px;
+        }
+        #input3 {
+            top: 190px;
+            left: 103px;
+            height: 50px;
+        }
+        #input4 {
+            top: 190px;
+            left: 145px;
+            height: 50px;
+        }
+        #submitbtn
+{    
+	visibility: hidden;
+}
+    </style>
+</head>
+<body>
+        <div class="lock">
+            <form >
+                <div id="inputs" class="inputs">
+                    <input class="input" id = "input1" type="text"
+                        inputmode="numeric" maxlength="1" />
+                    <input class="input" id = "input2" type="text"
+                        inputmode="numeric" maxlength="1" />
+                    <input class="input" id = "input3"type="text"
+                        inputmode="numeric" maxlength="1" />
+                    <input class="input" id = "input4"type="text"
+                        inputmode="numeric" maxlength="1" />    
+                <input type="submit" id="submitbtn" onclick="login(event);"/>
+                </div>
+            </form>
+            
+        </div>
     </div>
+
     <script src="assets/js/script.js"></script>
 </body>
 </html>
