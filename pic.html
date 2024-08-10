@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Museum Display</title>
+    <title>It's still a Secret</title>
     <style>
 
         body{
@@ -11,6 +11,7 @@
             background-size: 100%;
             background-position: center;
             background-attachment: fixed;
+        
         }
         
         img {
@@ -31,6 +32,7 @@
             height: 400px;
             float: left;
         }
+
         .slideshow-container {
             width: 1000px;
             height: 10em;
@@ -40,12 +42,24 @@
             transform: translate(-50%, -50%);
             font-size: 20px;
             text-align: center;
-            text-transform:uppercase;
-            justify-content: center;
-            align-items: center;
+            text-transform:uppercase;            
+        }
+
+        .next {
+            position: absolute;
+            top: 84%;
+            left: 72%;  
             
-            
-}
+        }
+        b1{
+            font-size:25px;
+            cursor: pointer;
+        }
+        span{
+            font-size:40px;
+            cursor: pointer;
+        }
+    
 
     </style>
 </head>
@@ -57,6 +71,7 @@
           
           <img src="assets/img/download.jpg" style="width:100%">
           <div class="text">This piece represents a blend of modern techniques and classical styles, capturing the essence of contemporary artistic expression. It reflects the artist's unique approach to form and color, inviting viewers to explore the deeper meanings within the composition.</div>
+          
         </div>
         
         <div class="mySlides fade">
@@ -64,10 +79,20 @@
           <img src="assets/img/download1.jpg" style="width:100%">
           <div class="text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</div>
         </div>
-        
-        
-    </div>
 
+        <div class="mySlides fade">
+          
+            <img src="assets/img/download2.jpg" style="width:100%">
+            <div class="text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</div>
+          </div>
+        
+          
+    </div>
+    <div class="next">
+        <b1 id="text" onclick = "foo()">Time to move on</b1>
+        <span id="arrow" onclick = "foo()">&#8658;</span>
+    </div>  
 </body>
+
 <script src="assets/js/scriptpic.js"></script>
 </html>
