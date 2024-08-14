@@ -15,6 +15,14 @@ function showSlides() {
 
 
 function foo() {
-  window.open('main.html', '_self');
+  window.open('quiz.html', '_self');
   return true;
+}
+
+window.onload = function(){
+  var theDelay = 20;
+  var timer = setTimeout("showText()",theDelay*1000)
+}
+function showText(){
+  document.getElementById("delayedText").style.visibility = "visible";
 }

@@ -50,7 +50,7 @@ inputs.addEventListener("keyup", function (e) {
     const inputValue3 = input3.value;
 	const inputValue4 = input4.value;
     if (inputValue1 == 1 && inputValue2 == 2 && inputValue3 == 3 && inputValue4 == 4){
-		window.open('pic.html', '_self');
+		window.open('pic2.html', '_self');
     } else {
 		alert("error!");
     }

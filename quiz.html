@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Still keeping it a Secret</title>
+    <style>
+       body {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    background-color: #f9f3e6;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(to right, #e6ccb2, #d4a373);
+}
+
+.quiz-container {
+    background-color: #f3e5d0;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    border: 2px solid #d4a373;
+}
+
+.quiz-container h2 {
+    margin-bottom: 30px;
+    color: #7b4e22;
+    font-size: 28px;
+    font-weight: 600;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
+.question {
+    margin-bottom: 30px;
+    display: none; /* Hide all questions initially */
+}
+
+.question p {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #6e3d1f;
+}
+
+.question label {
+    display: block;
+    margin: 10px 0;
+    font-size: 18px;
+    color: #5a3417;
+    cursor: pointer;
+}
+
+.question input[type="text"], 
+.question input[type="radio"] {
+    margin-right: 10px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #d4a373;
+    width: calc(100% - 22px);
+    margin-top: 10px;
+    background-color: #fff;
+}
+
+input[type="text"]:focus {
+    border-color: #b5838d;
+    outline: none;
+}
+
+.submit-btn {
+    background-color: #b5838d;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    text-align: center;
+    display: inline-block;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #936f6b;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #7b4e22;
+}
+
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h2>Qualification Test</h2>
+        <!-- True/False Question -->
+        <div class="question" id="q1">
+            <p>1. "Vick is the best" (True/False)</p>
+            <label>
+                <input type="radio" name="q1" value="true"> True
+            </label>
+            <label>
+                <input type="radio" name="q1" value="false"> False
+            </label>
+            <button class="submit-btn" onclick="checkAnswer('q1', 'true')">Submit</button>
+        </div>
+        <!-- Multiple Choice Question -->
+        <div class="question" id="q2">
+            <p>2. Which of the following does Vick have the most interest in?</p>
+            <label>
+                <input type="radio" name="q2" value="Simulator Gaming"> Simulator Gaming
+            </label><br>
+            <label>
+                <input type="radio" name="q2" value="Camping"> Camping
+            </label><br>
+            <label>
+                <input type="radio" name="q2" value="Flying"> Flying
+            </label><br>
+            <label>
+                <input type="radio" name="q2" value="Pooja"> Pooja
+            </label>
+            <button class="submit-btn" onclick="checkAnswer('q2', 'Pooja')">Submit</button>
+        </div>
+        <!-- Open-Ended Question -->
+        <div class="question" id="q3">
+            <p>3. Where was our first date at?</p>
+            <input type="text" name="q3">
+            <button class="submit-btn" onclick="checkAnswer('q3', 'gardens by the bay')">Submit</button>
+        </div>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('q1').style.display = 'block';
+
+function checkAnswer(questionId, correctAnswer) {
+    let userAnswer = '';
+
+    if (questionId === 'q1' || questionId === 'q2') {
+        userAnswer = document.querySelector(`input[name="${questionId}"]:checked`);
+        if (userAnswer) {
+            userAnswer = userAnswer.value;
+        }
+    } else if (questionId === 'q3') {
+        userAnswer = document.querySelector(`input[name="${questionId}"]`).value.trim();
+    }
+
+    if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+        document.getElementById(questionId).style.display = 'none';
+        let nextQuestion = getNextQuestion(questionId);
+        if (nextQuestion) {
+            document.getElementById(nextQuestion).style.display = 'block';
+        } else {
+            document.getElementById('result').textContent = "Well done! You are qualified!.";
+            setTimeout(function() {
+                window.location.href = 'main.html'; // Redirect after 3 seconds
+            }, 3000);
+        }
+    } else {
+        alert("Incorrect answer. Please try again.");
+    }
+}
+
+function getNextQuestion(currentQuestionId) {
+    if (currentQuestionId === 'q1') return 'q2';
+    if (currentQuestionId === 'q2') return 'q3';
+    return null;
+}
+
+    </script>
+</body>
+</html>
