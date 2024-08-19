@@ -12,7 +12,26 @@
             height: 100vh;
             background-color: #f0f0f0;
             margin: 0;
+            background-image: url('assets/img/safe.jpg');
+            background-size: cover;
+            background-position: center;
         }
+        #rainbow-background {
+            width:100%;
+            height:100vh;
+            background: linear-gradient(90deg,red, orange, yellow, green, blue, indigo, violet,indigo,blue, green,yellow,orange,red, red); 
+            background-size: 1000% 100%;  
+            animation: create-rainbow-gradient-shift 30s ease infinite;
+            text-align: center;
+            position: relative;
+            justify-items: center;
+        }
+
+            @keyframes create-rainbow-gradient-shift{
+                0%{background-position:0% 50%}
+                100%{background-position:100% 100%}
+        }
+ 
         .lock {
             position: relative;
             width: 200px;
@@ -58,6 +77,7 @@
     </style>
 </head>
 <body>
+    <div id="rainbow-background">
         <div class="lock">
             <form >
                 <div id="inputs" class="inputs">
@@ -74,8 +94,8 @@
             </form>
             
         </div>
+        </div>
     </div>
-
     <script src="assets/js/script.js"></script>
 </body>
 </html>
