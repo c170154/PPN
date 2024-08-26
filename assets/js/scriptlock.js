@@ -110,6 +110,6 @@ function checkLock() {
 }
 
 function foo() {
-    window.open('pic2.html', '_self');
+    window.open('quiz.html', '_self');
     return true;
   }

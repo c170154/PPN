@@ -12,7 +12,14 @@ body, html {
 #content {
   text-align: center;
   z-index: 10;
+  animation: fadeIn 7s; 
 }
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 #content img {
   max-width: 40%;
   height: auto;
@@ -24,7 +31,7 @@ body, html {
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 56px;
+  font-size: 23px;
   font-weight: bold;
   margin: 0;
   padding: 5px;
@@ -36,6 +43,10 @@ body, html {
   /* Optional: add a background for readability */
   background-color: black;
   border-radius: 5px;
+
+}
+.next{
+  visibility: hidden;
 }
 #fireworksCanvas {
   position: absolute;
